@@ -24,7 +24,21 @@ Expected Output: False (because -1 comes before 10 in the sequence, but after in
 
 def isValidSubsequence(array, sequence):
     # Write your code here.
-    pass
+    previous_index = -1
+    
+    for number in sequence:
+        if number not in array:
+            return False
+        else:
+            current_index = array.index(number)
+            if previous_index <= current_index:
+                previous_index = current_index
+            else:
+                return False
+    
+    if previous_index == -1:
+        return False
+    return True
 
 if __name__ == '__main__':
     # Test cases (you can add more here to test your solution)

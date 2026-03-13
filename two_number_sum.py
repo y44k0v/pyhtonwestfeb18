@@ -14,9 +14,26 @@ targetSum = 10
 Expected Output: [-1, 11] (the order of the numbers doesn't matter)
 """
 
-def twoNumberSum(array, targetSum):
-    # Write your code here.
-    pass
+def twoNumberSum(array: list, targetSum: int) -> list:
+    """Function takes a list of integers and returns a list of a pair of numbers
+    that sum to targetSum
+
+    Args:
+        array (list): a list of integers
+        targetSum (int): target sum
+
+    Returns:
+        list: a list that contains two numbers that add to target sum. empty
+        list if no numbers add to target sum
+    """
+    numbers = []
+    for number in array:
+        diff = targetSum - number
+        if number in numbers:
+            return [diff, number]
+        else:
+            numbers.append(diff)
+    return []
 
 if __name__ == '__main__':
     # Test cases (you can add more here to test your solution)

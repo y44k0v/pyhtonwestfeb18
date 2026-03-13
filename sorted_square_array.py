@@ -16,8 +16,7 @@ Expected Output: [0, 1, 1, 4, 4]
 
 def sortedSquaredArray(array):
     # Write your code here.
-    pass
-
+    return sorted([number ** 2 for number in array])
 if __name__ == '__main__':
     # Test cases (you can add more here to test your solution)
     print(f"Test 1: [1, 2, 3, 5, 6, 8, 9] -> {sortedSquaredArray([1, 2, 3, 5, 6, 8, 9])}")
