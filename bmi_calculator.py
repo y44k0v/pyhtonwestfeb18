@@ -22,35 +22,10 @@ Your 'calculate_bmi' function should:
 Good luck!
 """
 
-# --------------------------------------------------------------------------
-# STUDENT'S TASK: Implement the calculate_bmi function below.
-# DO NOT CHANGE the function signature (name and parameters).
-# --------------------------------------------------------------------------
-
 def calculate_bmi(weight_kg, height_m):
-    """
-    Calculates the Body Mass Index (BMI).
-
-    Args:
-        weight_kg (float or int): The person's weight in kilograms.
-        height_m (float or int): The person's height in meters.
-
-    Returns:
-        float: The calculated BMI.
-        (You might also consider returning None or raising an error for invalid inputs).
-    """
-    # Your code goes here!
-    # Example placeholder:
-    # if height_m <= 0:
-    #     return None # Or raise ValueError("Height cannot be zero or negative.")
-    # bmi = weight_kg / (height_m ** 2)
-    # return bmi
-    pass # Remove this line when you start implementing
-
-# --------------------------------------------------------------------------
-# You can add example usage here to test your function manually (optional)
-# if __name__ == "__main__":
-#     print("BMI for 70kg, 1.75m:", calculate_bmi(70, 1.75))
-#     print("BMI for 0kg, 1.75m:", calculate_bmi(0, 1.75))
-#     print("BMI for 70kg, 0m:", calculate_bmi(70, 0))
-# --------------------------------------------------------------------------
+    if height_m <= 0 or weight_kg < 0:
+        return None
+    
+    bmi = weight_kg / (height_m ** 2)
+    
+    return bmi
