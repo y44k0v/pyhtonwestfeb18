@@ -16,7 +16,21 @@ Expected Output: [-1, 11] (the order of the numbers doesn't matter)
 
 def twoNumberSum(array, targetSum):
     # Write your code here.
-    pass
+    array.sort()
+
+    left = 0
+    right = len(array) -1
+
+    while left < right:
+        currentSum = array[left] + array[right]
+        
+        if currentSum == targetSum:
+            return [array[left], array[right]]
+        elif currentSum < targetSum:
+            left += 1
+        elif currentSum > targetSum:
+            right -= 1
+    return[]
 
 if __name__ == '__main__':
     # Test cases (you can add more here to test your solution)
@@ -25,3 +39,4 @@ if __name__ == '__main__':
     print(f"Test 3: [4, 6], targetSum=10 -> {twoNumberSum([4, 6], 10)}")
     print(f"Test 4: [4, 6, 1], targetSum=5 -> {twoNumberSum([4, 6, 1], 5)}")
     print(f"Test 5: [1, 2, 3, 4, 5, 6, 7, 8, 9], targetSum=17 -> {twoNumberSum([1, 2, 3, 4, 5, 6, 7, 8, 9], 17)}")
+    print(f"Test 6: [1, 4, -3, -7, 8, 2, -5], targetSum=-2 -> {twoNumberSum([1, 4, -3, -7, 8, 2, -5], -2)}")

@@ -24,7 +24,17 @@ Expected Output: False (because -1 comes before 10 in the sequence, but after in
 
 def isValidSubsequence(array, sequence):
     # Write your code here.
-    pass
+    if len(sequence) == 0:
+        return False
+    
+    seq_idx=0
+    for value in array:
+        if seq_idx == len(sequence):
+            break
+        if value == sequence[seq_idx]:
+            seq_idx += 1
+
+    return seq_idx == len(sequence)
 
 if __name__ == '__main__':
     # Test cases (you can add more here to test your solution)
