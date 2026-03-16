@@ -15,8 +15,19 @@ Expected Output: [-1, 11] (the order of the numbers doesn't matter)
 """
 
 def twoNumberSum(array, targetSum):
-    # Write your code here.
-    pass
+    # # Write your code here.
+    # pass
+
+    num = set() #keep track of the numbers that already checked
+    
+    for i in array:
+        twoNumberSum = targetSum - i
+        if twoNumberSum in num:
+            return [twoNumberSum, i]
+        num.add(i)
+    return []  # no pair found
+
+
 
 if __name__ == '__main__':
     # Test cases (you can add more here to test your solution)
@@ -25,3 +36,4 @@ if __name__ == '__main__':
     print(f"Test 3: [4, 6], targetSum=10 -> {twoNumberSum([4, 6], 10)}")
     print(f"Test 4: [4, 6, 1], targetSum=5 -> {twoNumberSum([4, 6, 1], 5)}")
     print(f"Test 5: [1, 2, 3, 4, 5, 6, 7, 8, 9], targetSum=17 -> {twoNumberSum([1, 2, 3, 4, 5, 6, 7, 8, 9], 17)}")
+    print(f"Test 4: [4, 6, 1], targetSum=20 -> {twoNumberSum([4, 6, 1], 20)}")
