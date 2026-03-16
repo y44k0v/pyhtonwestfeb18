@@ -15,8 +15,19 @@ Expected Output: [0, 1, 1, 4, 4]
 """
 
 def sortedSquaredArray(array):
-    # Write your code here.
-    pass
+
+    # # Write your code here.
+    # pass
+
+    
+    new_array = [] 
+
+    for i in array:
+        new_array.append(i * i)
+
+    new_array.sort() 
+    return new_array
+
 
 if __name__ == '__main__':
     # Test cases (you can add more here to test your solution)
