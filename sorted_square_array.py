@@ -15,13 +15,26 @@ Expected Output: [0, 1, 1, 4, 4]
 """
 
 def sortedSquaredArray(array):
-    # Write your code here.
-    pass
-
-if __name__ == '__main__':
-    # Test cases (you can add more here to test your solution)
-    print(f"Test 1: [1, 2, 3, 5, 6, 8, 9] -> {sortedSquaredArray([1, 2, 3, 5, 6, 8, 9])}")
-    print(f"Test 2: [-2, -1, 0, 1, 2] -> {sortedSquaredArray([-2, -1, 0, 1, 2])}")
-    print(f"Test 3: [-5, -4, -3, -2, -1] -> {sortedSquaredArray([-5, -4, -3, -2, -1])}")
-    print(f"Test 4: [0, 0, 0] -> {sortedSquaredArray([0, 0, 0])}")
-    print(f"Test 5: [7, 8, 9, 10] -> {sortedSquaredArray([7, 8, 9, 10])}")
+    length = len(array)
+    result_array = [0] * length
+    
+    start_of_array = 0
+    end_of_array = length - 1
+    
+    position_to_fill = length - 1
+    
+    while position_to_fill >= 0:
+      
+        start_val = array[start_of_array]
+        end_val = array[end_of_array]
+        if abs(start_val) > abs(end_val):
+            result_array[position_to_fill] = start_val * start_val
+            start_of_array = start_of_array + 1
+        else:
+            result_array[position_to_fill] = end_val * end_val
+            end_of_array = end_of_array - 1
+            
+        position_to_fill = position_to_fill - 1
+        
+    return result_array
+                          
